@@ -17,8 +17,8 @@ var stringChecker = function(str) {
 };
 
 var countLetters = function(str) {
-    if (!stringChecker(str)) {
-      return 'Enter a string';
+  if (!stringChecker(str)) {
+    return 'Enter a string';
   } else {
     var noSpaces = str.split(' ').join(''); // add .toLowerCase() if it should not register the letter case
     var result = {};
