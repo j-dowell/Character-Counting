@@ -1,11 +1,11 @@
-var amountOf = function(letter, list) {
-  var count = 0;
+var indexOf = function(letter, list) {
+  var places = [];
   for (var i = 0; i < list.length; i++) {
     if (list[i] === letter) {
-      count++;
+      places.push(i);
     }
   }
-  return count;
+  return places;
 };
 
 var stringChecker = function(str) {
@@ -17,19 +17,19 @@ var stringChecker = function(str) {
 };
 
 var countLetters = function(str) {
-  if (!stringChecker(str)) {
-    return 'Enter a string';
+    if (!stringChecker(str)) {
+      return 'Enter a string';
   } else {
-    var noSpaces = str.split(' ').join(''); // add .toLowerCase() if it should not register the letter case
+    var noSpaces = str.split(' ').join('').toLowerCase();
     var result = {};
     for (var i = 0; i < noSpaces.length; i++) {
       var character = noSpaces[i];
       if (!Object.keys(result).includes(character)) {
-        result[character] = amountOf(character, noSpaces);
+        result[character] = indexOf(character, str);
        }
     }
     return result;
   }
 };
 
-console.log(countLetters('lighthouseinthehouse'));
+console.log(countLetters("lighthouse in the house"));
