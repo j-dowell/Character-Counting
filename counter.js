@@ -24,8 +24,8 @@ var countLetters = function(str) {
     var result = {};
     for (var i = 0; i < noSpaces.length; i++) {
       var character = noSpaces[i];
-      if (!Object.keys(result).includes(noSpaces[i])) {
-        result[(noSpaces[i])] = amountOf(character, noSpaces);
+      if (!Object.keys(result).includes(character)) {
+        result[character] = amountOf(character, noSpaces);
        }
     }
     return result;
